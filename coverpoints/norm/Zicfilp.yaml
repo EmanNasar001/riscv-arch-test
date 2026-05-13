@@ -11,14 +11,8 @@ normative_rule_definitions:
 
   # Access to the SPELP field, added by Zicfilp, accesses the homonymous fields of
   # mstatus when V=0, and the homonymous fields of vsstatus when V=1.
-  - names:
-      [
-        sstatus_spelp_sz,
-        sstatus_spelp_acc,
-        sstatus_spelp_op,
-        sstatus_spelp_Zicfilp,
-      ]
-    coverpoint: [""]
+  - names: [sstatus_spelp_op]
+    coverpoint: ["Zicfilp_s_cg/cp_zicfilp_lpad_label_exception_delivery"]
 
   # The Zicfilp extension adds the LPE field in senvcfg. When the LPE field is set
   # to 1, the Zicfilp extension is enabled in VU/U-mode. When the LPE field is 0,
@@ -34,7 +28,7 @@ normative_rule_definitions:
   # "landing pad fault (code=2)" (See &lt;&lt;norm:exc_priority&gt;&gt; of
   # Privileged Specification).
   - name: Zicfilp_forward_traps
-    coverpoint: [""]
+    coverpoint: ["Not Testable"]
 
   # The software-check exception caused by Zicfilp has higher priority than an
   # illegal-instruction exception but lower priority than instruction access-fault.
